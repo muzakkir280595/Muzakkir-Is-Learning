@@ -1,0 +1,23 @@
+Set Up Git: 
+git config --global user.name "Your Name"
+ git config --global user.email "youremail@domain.com"
+
+ other commands:
+
+git branch - to list all the Git local branches
+git branch (your desired branch name) - To create new branch
+git switch master - switch to the “master” branch from another local branch
+git checkout master-Another way to switch from any local branch to a “master” branch is the “git checkout” command
+ git clone (url) 
+ git add (file names) -for specific file
+git add -A - for all files inside a folder
+ git commit -m "(committed message) -for commit whole folder
+git commit -m "(committed message) your file - for commit specific file
+ git push -u origin main (based on your branches)
+ git remote add origin main (url)( https://tokenhere@github.com/user_name/repo_name):
+git remote add origin https://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@github.com/muzakkir280595/JsApps
+
+
+
+FIX: "Support for password authentication was removed. Please use a personal access token instead." 
+git clone https://tokenhere@github.com/user_ name/repo_name
