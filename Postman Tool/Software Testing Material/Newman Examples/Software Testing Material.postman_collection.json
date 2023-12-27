@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "fa6fe312-6633-48f5-ac20-305b584375c5",
+		"name": "Software Testing Material",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29236140"
+	},
+	"item": [
+		{
+			"name": "Get Request Positive Test Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request Positive With Name Test Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check if user with id1 is Leanne Graham\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"});\r",
+							"pm.test(\"Check if user with id1 is Leanne Graham\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].name).to.eql(\"Ervin Howell\");\r",
+							"});\r",
+							"pm.test(\"Check if user with id1 is Leanne Graham\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].name).to.eql(\"MJF\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request Negative Test Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/usersz",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"usersz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Request Positive Test Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Rajkumar SM\",\r\n    \"username\": \"stm\",\r\n    \"email\": \"raj@softwaretestingmaterial.com\",\r\n    \"address\": {\r\n      \"street\": \"X Roads\",\r\n      \"suite\": \"Apt. 007\",\r\n      \"city\": \"Hyderabad\",\r\n      \"zipcode\": \"600007\",\r\n      \"geo\": {\r\n        \"lat\": \"10.0000\",\r\n        \"lng\": \"80.0000\"\r\n      }\r\n    },\r\n    \"phone\": \"1-2345-6-7890\",\r\n    \"website\": \"softwaretestingmaterial.com\",\r\n    \"company\": {\r\n      \"name\": \"Software Testing Material\",\r\n      \"catchPhrase\": \"A blog for Software Testers\",\r\n      \"bs\": \"real-time tutorials\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Request Negative Test Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Rajkumar SM\",\r\n    \"username\": \"stm\",\r\n    \"email\": \"raj@softwaretestingmaterial.com\",\r\n    \"address\": {\r\n      \"street\": \"X Roads\",\r\n      \"suite\": \"Apt. 007\",\r\n      \"city\": \"Hyderabad\",\r\n      \"zipcode\": \"600007\",\r\n      \"geo\": {\r\n        \"lat\": \"10.0000\",\r\n        \"lng\": \"80.0000\"\r\n      }\r\n    },\r\n    \"phone\": \"1-2345-6-7890\",\r\n    \"website\": \"softwaretestingmaterial.com\",\r\n    \"company\": {\r\n      \"name\": \"Software Testing Material\",\r\n      \"catchPhrase\": \"A blog for Software Testers\",\r\n      \"bs\": \"real-time tutorials\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/userszzzzzz",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"userszzzzzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request By Using Parameter Positive Test Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request By Using Parameter Negative Test Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/usersx",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"usersx"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
