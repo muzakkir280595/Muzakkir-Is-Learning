@@ -4,3 +4,7 @@ docker: Error response from daemon: manifest for jenkins:latest not found: manif
 
 Use:
 docker pull jenkins/jenkins
+
+
+To run Jenkins, you need to run the following command:
+sudo docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins
