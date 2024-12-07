@@ -1,0 +1,5 @@
+After create a container with the port 22 expose to what number you want, like below
+
+docker run -itd --name muzakkirsshcentos -p 1111:22  -h mzk --privileged=true centos:ssh /usr/sbin/init
+
+You can access the docker by typing the host ip of the docker and fill in the port number exposed example, 1111 like above, and then make sure to set password for the user so that winscp or putty can access the docker container.

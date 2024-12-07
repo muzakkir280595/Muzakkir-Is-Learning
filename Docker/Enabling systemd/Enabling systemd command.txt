@@ -1,0 +1,1 @@
+docker run -itd --name mzkcentossh --privileged=true -h mzk centos:ssh  /usr/sbin/init

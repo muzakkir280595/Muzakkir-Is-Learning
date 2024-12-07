@@ -1,0 +1,1 @@
+docker run -itd --name mzk1 rockylinux:8

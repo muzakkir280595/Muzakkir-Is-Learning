@@ -1,0 +1,5 @@
+For Container:
+sudo docker rm -f $(sudo docker ps -a -q)
+
+For Images:
+sudo docker image remove -f $(sudo docker images -a -q)

@@ -1,0 +1,1 @@
+Please note, in order to access the docker container app or ssh, we not directly using the ip assigned at the container, but we use the host of the docker ip and the exposed port to access the app or ssh.
