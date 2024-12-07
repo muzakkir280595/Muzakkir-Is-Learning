@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Backing Up, Restoring and Migrating VM - Tutorialspoint</title>
+<meta charset="utf-8">
+<meta name="description" content="Backing Up, Restoring and Migrating VM - In this chapter, we will discuss how to back up, restore and migrate a virtual machine."/>
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code"/>
+<link rel="canonical" href="virtualization2.0_backing_up_restoring_migrating_vm.htm" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="../themes/css/style-min-v1.css">
+<script src="../themes/js/script-min-v1.js%3Fv=1.0.1"></script>
+<script>function printPage() { window.print(); }</script>
+<script type="text/javascript" src="https://services.bilsyndication.com/adv1/?q=0a8a90220201327770f6c986bea026a3" defer="" async=""></script>
+<script>var vitag = vitag || {};</script>
+<script>vitag.outStreamConfig = { enablePC: false, enableMobile: false };</script>  
+<script>function printPage() { window.print(); }</script>
+<style>
+.right-menu .mui-btn {
+    background-color:#036db0;
+}
+a.demo {
+    background:#036db0;
+}
+li.heading {
+    background:#036db0;
+}
+.course-box{background:#036db0}
+.home-intro-sub p{color:#036db0}
+</style>
+</head>
+<body>
+<header id="header">
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="../index.html" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="../online_dev_tools.htm.tmp.html" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="../codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="../current_affairs.htm.tmp.html" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item online-tutoris">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="../whiteboard.htm.tmp.html" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fal fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> 
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>        
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="../index.html" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="images/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="../academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="../big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="../computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="../computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="../database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="../devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="../digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="../engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="../famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="../gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="../latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="../machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="../mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="../management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="../maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="../microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="../misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="../mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="../java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="../python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="../sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="../scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="../selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="../software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="../soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="../telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="../web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="../sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="../xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="../multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="../questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="../search.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box">
+<form method="get" class="search-form" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fal fa-search"></i></button>
+</form>
+</div>
+<div class="menu-btn library-btn">
+<a href="../tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="mui-dropdown">
+<button class="mui-btn mui-btn--primary mobile-menu" data-mui-toggle="dropdown">
+<span class="mui-caret"></span>
+</button>
+<ul class="mui-dropdown__menu">
+<li><a href="../tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a></li>
+<li><a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a></li>
+<li><a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<div class="mini-logo">
+<img src="images/virtualization-mini-logo.jpg" alt="Virtualization 2.0 Tutorial" />
+</div>
+<ul class="toc chapters">
+<li class="heading">Virtualization 2.0 Tutorial</li>
+<li><a href="index.htm">Virtualization 2.0 - Home</a></li>
+<li><a href="virtualization2.0_overview.htm">Virtualization 2.0 - Overview</a></li>
+<li><a href="virtualization2.0_pros_and_cons.htm">Virtualization 2.0 - Pros and Cons</a></li>
+<li><a href="virtualization2.0_common_uses.htm">Virtualization 2.0 - Common Uses</a></li>
+<li><a href="virtualization2.0_hardware.htm">Virtualization 2.0 - Hardware</a></li>
+<li><a href="virtualization2.0_microsoft_hyperv.htm">Virtualization 2.0 - Microsoft HyperV</a></li>
+<li><a href="virtualization2.0_vmware_workstation_player.htm">VMware Workstation Player</a></li>
+<li><a href="virtualization2.0_virtualbox.htm">Virtualization 2.0 - VirtualBox</a></li>
+<li><a href="virtualization2.0_openstack.htm">Virtualization 2.0 - Openstack</a></li>
+<li><a href="virtualization2.0_preparing_the_infrastructure.htm">Preparing the Infrastructure</a></li>
+<li><a href="virtualization2.0_troubleshooting.htm">Virtualization 2.0 - Troubleshooting</a></li>
+<li><a href="virtualization2.0_backing_up_restoring_migrating_vm.htm">Backing Up, Restoring &amp; Migrating VM</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">Virtualization 2.0 Useful Resources</li>
+<li><a href="virtualization2.0_quick_guide.htm">Virtualization 2.0 - Quick Guide</a></li>
+<li><a href="virtualization2.0_useful_resources.htm">Virtualization 2.0 - Useful Resources</a></li>
+<li><a href="virtualization2.0_discussion.htm">Virtualization 2.0 - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="../developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="../questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="../effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="../hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="../computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="../computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div style="height:250px;">
+<div class="adsbyvli" data-ad-slot="vi_9017967"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9017967")})</script>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>Backing Up, Restoring and Migrating VM</h1>
+<hr />
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="vi_top_ads" style="text-align:center !important;"></div>
+   <script>
+     (function() {
+     var adPos = document.getElementById('vi_top_ads');
+     var ad_id_720 = "vi_9012178";
+     var ad_id_650 = "vi_9014435";
+     var ad_id_300 = "vi_9017967";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div class="adsbyvli" data-ad-slot="' + ad_id + '"></div>';
+     (vitag.displayInit = window.vitag.displayInit || []).push(function () {
+         viAPItag.display(ad_id);
+     });
+     }())
+   </script>
+</div>
+<br>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="virtualization2.0_troubleshooting.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="virtualization2.0_quick_guide.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>In this chapter, we will discuss how to back up, restore and migrate a virtual machine.</p>
+<h2>Duplicating a VM</h2>
+<p>To duplicate or clone a machine means making an exact copy of it. Most of the hypervisors support this feature. By duplicating a machine, we copy down every detail, including the name of the machine and the different network addresses attached to the machine.</p>
+<p>Duplicating a machine and putting it in to function is not always the best option because a duplicate name or IP in network can be a problem. We make duplication generally for backup purposes.</p>
+<p>Most hypervisors can clone while the machine is turned off. If the hypervisor accepts to clone while it is on, it is recommend to turn it off, because the process can crash the machine. In practice, we have discussed “How cloning is done in VMware Workstation”, please refer to the previous chapters.</p>
+<h2>Backing Up and Recovering a VM</h2>
+<p>There are three methods for backing up virtual machines.</p>
+<h3>Method 1</h3>
+<p>The most common one is to install traditional backup software on the guest VM. If Windows OS is used on our VM, we can use “Backup and restore” to back up the machine, which is found in the “Control Panel”.</p>
+<img src="images/backup.jpg" alt="Backup" />
+<p>For Linux OS, we can use many open source tools depending on our needs, like “Bacula”, “rsync”, etc.</p>
+<h3>Method 2</h3>
+<p>Another strategy or method is to copy all of the files that define a VM. Therefore, we will have to go out and find all of the individual files that define our virtual machine and copy them to an alternate location. Some of these files are going to be large.</p>
+<p>Example: Here, we have created several VM machines with VirtualBox as shown in the following illustration. Their names are – “AC2”, “Kali2016.1”, “test”, “Windows 2012”.</p>
+<img src="images/ac2.jpg" alt="AC2" />
+<p>To find the files that we have to copy or to backup, we have to right click on the VM machine. Go to “Storage” then move your mouse over the virtual HDD and it will show the full path where the VDI files are found.</p>
+<img src="images/go_to_storage.jpg" alt="Go to Storage" />
+<p></p>
+<img src="images/logs.jpg" alt="Logs" />
+<p>We will save all these files to another location.</p>
+<h3>Method 3</h3>
+<p>The third option to backup and restore VM machines is to use third party software. One of the best is <b>VEEAM</b>, which can be found on the following URL - <a rel="nofollow" target="_blank" href="https://www.veeam.com/">https://www.veeam.com/</a></p>
+<img src="images/veeam.jpg" alt="VEEAM" />
+<h2>Converting a Physical Server into a Virtual Server</h2>
+<p>In this section, we will see how to convert a physical machine into a virtual machine. This is often called as <b>P2V</b> in many literatures.</p>
+<p>VMware puts out a product that is called <b>vCenter Converter</b>, which will convert from a physical machine specifically into a VMware virtual machine. The software can be downloaded from - <a rel="nofollow" target="_blank" href="https://www.vmware.com/products/converter.html">https://www.vmware.com/products/converter.html</a></p>
+<img src="images/p2v.jpg" alt="P2V" />
+<p>Microsoft has a product called <b>Disk2vhd</b>, which will convert a physical hard drive into a VHD formatted virtual hard drive. It can be downloaded from the following link – <a rel="nofollow" target="_blank" href="https://technet.microsoft.com/en-us/sysinternals/ee656415.aspx">https://technet.microsoft.com/en-us/sysinternals/ee656415.aspx</a></p>
+<p>We just have to install the software on the physical server and click “Create” as shown in the screenshot below. A VHDX file will be created which could be imported in a Hypervisor.</p>
+<img src="images/disk2vhd.jpg" alt="Disk2vhd" />
+<p>Both of these products will convert machines, while the server is running and is free. All the vendors of hypervisors have some P2V tool and they are typically free. From the vendor’s point of view, they would very much like you to convert your physical machines into virtual machines that are optimized for their hypervisor.</p>
+<h2>Converting a Virtual Server into a Physical Server</h2>
+<p>To convert a virtual server to a physical server also commonly called as V2P is certainly less common than a P2V conversion. However sometimes, it is needed in development-based environments. It does happen where a product needs to be tested in the virtual server than to a physical server, or to clone a production machine and move it to test.</p>
+<p>Hypervisor vendors do not offer such a tool. However, you have to request the hardware vendor, if they could offer such tools.</p>
+<div class="mui-container-fluid button-borders show" id="bottom_navigation">
+<div class="pre-btn">
+<a href="virtualization2.0_troubleshooting.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="virtualization2.0_quick_guide.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="google-bottom-ads">
+<div>Advertisements</div>
+<div>
+<div id="vi_bottom_ads"></div>
+   <script>
+     (function() {
+     var adPos = document.getElementById('vi_bottom_ads');
+     var mobile_ad_id = "vi_9012177";
+     var desktop_ad_id = "vi_9013190";
+     var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+     adPos.innerHTML = '<div class="adsbyvli" data-ad-slot="' + ad_id + '"></div>';
+     (vitag.displayInit = window.vitag.displayInit || []).push(function () {
+         viAPItag.display(ad_id);
+     });
+     }())
+   </script>
+</div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2" id="right-col">
+<div class="space-top"></div>
+<div class="google-right-ad" id="ad300" style="margin: 0px auto !important;margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9012177"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9012177")})</script>
+</div>
+<div class="google-right-ad" style="margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9017966"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9017966")})</script>
+</div>
+<div class="google-right-ad google-right-ads" id="stickyparent" style="margin-top:5px;">
+<div id="sticky-ad">
+<div style="position:relative;margin:auto;margin-bottom:15px;">
+<div class="adsbyvli" data-ad-slot="vi_9013289"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9013289")})</script>
+</div>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="../index.html" class="logo"><img class="img-responsive" src="https://www.tutorialspoint.com/images/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_helping.htm"><i class="fal fa-hands-helping"></i> Helping</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">&copy; Copyright 2019. All Rights Reserved.</div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+</footer>
+</body>
+</html>

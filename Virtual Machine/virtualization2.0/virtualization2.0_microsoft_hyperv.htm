@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Virtualization 2.0 - Microsoft Hyper-V - Tutorialspoint</title>
+<meta charset="utf-8">
+<meta name="description" content="Virtualization 2.0 - Microsoft Hyper-V - In this chapter, we will discuss Microsoft Hyper-V along with its various modules."/>
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code"/>
+<link rel="canonical" href="virtualization2.0_microsoft_hyperv.htm" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="../themes/css/style-min-v1.css">
+<script src="../themes/js/script-min-v1.js%3Fv=1.0.1"></script>
+<script>function printPage() { window.print(); }</script>
+<script type="text/javascript" src="https://services.bilsyndication.com/adv1/?q=0a8a90220201327770f6c986bea026a3" defer="" async=""></script>
+<script>var vitag = vitag || {};</script>
+<script>vitag.outStreamConfig = { enablePC: false, enableMobile: false };</script>  
+<script>function printPage() { window.print(); }</script>
+<style>
+.right-menu .mui-btn {
+    background-color:#036db0;
+}
+a.demo {
+    background:#036db0;
+}
+li.heading {
+    background:#036db0;
+}
+.course-box{background:#036db0}
+.home-intro-sub p{color:#036db0}
+</style>
+</head>
+<body>
+<header id="header">
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="../index.html" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="../online_dev_tools.htm.tmp.html" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="../codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="../current_affairs.htm.tmp.html" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item online-tutoris">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="../whiteboard.htm.tmp.html" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fal fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> 
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>        
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="../index.html" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="images/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="../academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="../big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="../computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="../computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="../database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="../devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="../digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="../engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="../famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="../gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="../latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="../machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="../mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="../management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="../maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="../microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="../misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="../mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="../java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="../python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="../sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="../scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="../selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="../software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="../soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="../telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="../web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="../sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="../xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="../multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="../questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="../search.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box">
+<form method="get" class="search-form" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fal fa-search"></i></button>
+</form>
+</div>
+<div class="menu-btn library-btn">
+<a href="../tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="mui-dropdown">
+<button class="mui-btn mui-btn--primary mobile-menu" data-mui-toggle="dropdown">
+<span class="mui-caret"></span>
+</button>
+<ul class="mui-dropdown__menu">
+<li><a href="../tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a></li>
+<li><a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a></li>
+<li><a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<div class="mini-logo">
+<img src="images/virtualization-mini-logo.jpg" alt="Virtualization 2.0 Tutorial" />
+</div>
+<ul class="toc chapters">
+<li class="heading">Virtualization 2.0 Tutorial</li>
+<li><a href="index.htm">Virtualization 2.0 - Home</a></li>
+<li><a href="virtualization2.0_overview.htm">Virtualization 2.0 - Overview</a></li>
+<li><a href="virtualization2.0_pros_and_cons.htm">Virtualization 2.0 - Pros and Cons</a></li>
+<li><a href="virtualization2.0_common_uses.htm">Virtualization 2.0 - Common Uses</a></li>
+<li><a href="virtualization2.0_hardware.htm">Virtualization 2.0 - Hardware</a></li>
+<li><a href="virtualization2.0_microsoft_hyperv.htm">Virtualization 2.0 - Microsoft HyperV</a></li>
+<li><a href="virtualization2.0_vmware_workstation_player.htm">VMware Workstation Player</a></li>
+<li><a href="virtualization2.0_virtualbox.htm">Virtualization 2.0 - VirtualBox</a></li>
+<li><a href="virtualization2.0_openstack.htm">Virtualization 2.0 - Openstack</a></li>
+<li><a href="virtualization2.0_preparing_the_infrastructure.htm">Preparing the Infrastructure</a></li>
+<li><a href="virtualization2.0_troubleshooting.htm">Virtualization 2.0 - Troubleshooting</a></li>
+<li><a href="virtualization2.0_backing_up_restoring_migrating_vm.htm">Backing Up, Restoring &amp; Migrating VM</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">Virtualization 2.0 Useful Resources</li>
+<li><a href="virtualization2.0_quick_guide.htm">Virtualization 2.0 - Quick Guide</a></li>
+<li><a href="virtualization2.0_useful_resources.htm">Virtualization 2.0 - Useful Resources</a></li>
+<li><a href="virtualization2.0_discussion.htm">Virtualization 2.0 - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="../developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="../questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="../effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="../hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="../computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="../computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div style="height:250px;">
+<div class="adsbyvli" data-ad-slot="vi_9017967"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9017967")})</script>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>Virtualization 2.0 - Microsoft Hyper-V</h1>
+<hr />
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="vi_top_ads" style="text-align:center !important;"></div>
+   <script>
+     (function() {
+     var adPos = document.getElementById('vi_top_ads');
+     var ad_id_720 = "vi_9012178";
+     var ad_id_650 = "vi_9014435";
+     var ad_id_300 = "vi_9017967";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div class="adsbyvli" data-ad-slot="' + ad_id + '"></div>';
+     (vitag.displayInit = window.vitag.displayInit || []).push(function () {
+         viAPItag.display(ad_id);
+     });
+     }())
+   </script>
+</div>
+<br>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="virtualization2.0_hardware.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="virtualization2.0_vmware_workstation_player.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>In this chapter, we will discuss Microsoft Hyper-V along with its various modules.</p>
+<h2>Installing Hyper-V in Windows Server 2012</h2>
+<p>Microsoft Hyper-V, known as Windows Server Virtualization, is a native (bare) hypervisor. It can create virtual machines on x86-64 systems running Windows OS, starting with Windows 8. Hyper-V supersedes <b>Windows Virtual PC</b> as the hardware virtualization component of the client editions of Windows NT. A server computer running Hyper-V can be configured to expose individual virtual machines to one or more networks.</p>
+<p>Hyper-V was first released alongside Windows Server 2008 and Windows 7 and has been available without charge for all the Windows Server versions and some client operating systems since that time.</p>
+<p>Let us see how to install a Hyper-V role in a Windows Server 2012 by following the steps given below.</p>
+<p><b>Step 1</b> &minus; To Install Hyper-V role go to “Server Manager” &rarr; Manage &rarr; Add Roles and Features.</p>
+<img src="images/manage.jpg" alt="Manage" />
+<p><b>Step 2</b> &minus; Click on “Next”.</p>
+<img src="images/before_begin.jpg" alt="Before Begin" />
+<p><b>Step 3</b> &minus; Select “Role-based or feature-based installation” option &rarr; click on “Next”.</p>
+<img src="images/role_based.jpg" alt="Role Based" />
+<p><b>Step 4</b> &minus; We will locally install the Hyper-V role as such “Select a server from the server pool” &rarr; click “Next”.</p>
+<img src="images/server_selection.jpg" alt="Server Selection" />
+<p><b>Step 5</b> &minus; From the Roles lists, check the “Hyper-V” Server role &rarr; click on Add Features on the popup window &rarr; click “Next”.</p>
+<img src="images/hyperv.jpg" alt="Hyper-V" />
+<p><b>Step 6</b> &minus; Click “Next”.</p>
+<img src="images/click_next.jpg" alt="Click Next" />
+<p><b>Step 7</b> &minus; Choose your server’s physical network adapters that will take part in the virtualization and responsible for network switching &rarr; click on “Next”.</p>
+<img src="images/switching.jpg" alt="Switching" />
+<p><b>Step 8</b> &minus; Under Migration, leave the default settings &rarr; click on “Next”.</p>
+<img src="images/migration.jpg" alt="Migration" />
+<p><b>Step 9</b> &minus; Choose the path where you want to save the file &rarr; click on “Next”.</p>
+<img src="images/path.jpg" alt="Path" />
+<p><b>Step 10</b> &minus; Click “Install” and wait for the installation bar to finish.</p>
+<img src="images/install.jpg" alt="Install" />
+<h2>Installing Hyper-V in a windows 10 workstation</h2>
+<p>To install it in Windows 7, 8, 10 versions, you have to check if your computer supports virtualization. Following are the basic requirements &minus;</p>
+<ul class="list">
+<li>Windows 10 Pro or Enterprise 64-bit Operating System.</li>
+<li>A 64-bit processor with Second Level Address Translation (SLAT).</li>
+<li>4GB system RAM at minimum.</li> 
+<li>BIOS-level Hardware Virtualization support.</li> 
+</ul>
+<p>In my case, we have a laptop <b>HP Probook 450 G3</b>, which supports it.</p>
+<p>Before continuing with the installation, follow the steps given below.</p>
+<p><b>Step 1</b> &minus; Ensure that hardware virtualization support is turned on in the BIOS settings as shown below &minus;</p>
+<img src="images/bios.jpg" alt="BIOS" />
+<p><b>Step 2</b> &minus; Type in the search bar <b>“turn windows features on or off”</b> and click on that feature as shown below.</p>
+<img src="images/windows_on_off.jpg" alt="Windows On Off" />
+<p><b>Step 3</b> &minus; Select and enable Hyper-V.</p>
+<img src="images/enable_hyperv.jpg" alt="Enable Hyper-V" />
+<h2>Creating a Virtual Machine with Hyper-V</h2>
+<p>In this section, we will learn how to create a virtual machine. To begin with, we have to open the Hyper-V manager and then follow the steps given below.</p>
+<p><b>Step 1</b> &minus; Go to “Server Manager” &rarr; Click on “Hyper-V Manager”.</p>
+<img src="images/hyperv_manager.jpg" alt="Hyper-V Manager" />
+<p><b>Step 2</b> &minus; Click “New” on the left Panel or on the “Actions” button.</p>
+<img src="images/actions.jpg" alt="Actions" />
+<p><b>Step 3</b> &minus; Double-click on “Virtual Machine…”</p>
+<img src="images/virtual_machine.jpg" alt="Virtual Machine" />
+<p><b>Step 4</b> &minus; A new table will open &rarr; Type Name of your new machine &rarr; click “Next”.</p>
+<img src="images/window7.jpg" alt="Window 7" />
+<p><b>Step 5</b> &minus; A new table will be opened where you have to allocate the memory. Keep in mind you cannot choose more memory than you have physically.</p>
+<img src="images/memory_allocation.jpg" alt="Memory Allocation" />
+<p><b>Step 6</b> &minus; In the “Connection” drop down box, choose your physical network adaptor &rarr; click on “Next”.</p>
+<img src="images/connection.jpg" alt="Connection" />
+<p><b>Step 7</b> &minus; Now it is time to create a Virtual Hard disk, if you already have one, choose the second option.</p>
+<img src="images/hard_disc.jpg" alt="Hard Disc" />
+<p><b>Step 8</b> &minus; Select the Image of ISO that has to be installed &rarr; click on “Finish”.</p>
+<img src="images/iso.jpg" alt="ISO" />
+<p><b>Step 9</b> &minus; After clicking on finish, you would get the following message as shown in the screenshot below.</p>
+<img src="images/finish.jpg" alt="Finish" />
+<p><b>Step 10</b> &minus; To connect to the Virtual machine, Right Click on the created machine &rarr; click on “Connect…”</p>
+<img src="images/connect.jpg" alt="Connect" />
+<p><b>Step 11</b> &minus; After that, installation of your ISO will continue.</p>
+<img src="images/iso_continue.jpg" alt="ISO Continue" />
+<h2>Setting up Networking with Hyper-V </h2>
+<p>The Hyper-V vSwitch is a software, layer-2 Ethernet network-traffic switch. It allows administrators to connect VMs to either physical or virtual networks. It is available by default within the Hyper-V Manager installation and contains extended capabilities for security and resource tracking.</p>
+<p>If you attempt to create a VM right after the set-up process, you will not be able to connect it to a network.</p>
+<p>To set up a network environment, you will need to select the <b>Virtual Switch Manager</b> in the right hand side panel of Hyper-V Manager as shown in the screenshot below.</p>
+<img src="images/virtual_switch_manager.jpg" alt="Virtual Switch Manager" />
+<p>The Virtual Switch Manager helps configure the vSwitch and the Global Network Settings, which simply lets you change the default ‘MAC Address Range’, if you see any reason for that.</p>
+<p>Creation of the virtual switch is easy and there are three vSwitch types available, which are described below &minus;</p>
+<ul class="list">
+<li><p><b>External vSwitch</b> will link a physical NIC of the Hyper-V host with a virtual one and then give your VMs access outside of the host. This means that your physical network and internet (if your physical network is connected to internet).</p></li>
+<li><p><b>Internal vSwitch</b> should be used for building an independent virtual network, when you need to connect VMs to each other and to a hypervisor as well.</p></li>
+<li><p><b>Private vSwitch</b> will create a virtual network where all connected VMs will see each other, but not the Hyper-V host. This will completely isolate the VMs in that sandbox.</p></li> 
+</ul>
+<img src="images/external.jpg" alt="External" />
+<p>Here, we have selected “External” and then “Create Virtual Switch”. The table with the setting of the vSwitch will be open where we will fill the fields as shown below</p>
+<ul class="list">
+<li><p><b>Name</b> &minus; is the name that we will put to identify the vSwitch.</p></li> 
+<li><p><b>Notes</b> &minus; is the description for us, generally, we put friendly descriptions to be understood.</p></li> 
+<li><p><b>Connection Type</b> &minus; is external as explained earlier and selects a physical network card on my server.</p></li> 
+</ul>
+<p>Once all this is entered, Click on “OK”.</p>
+<img src="images/create_switch.jpg" alt="Create Switch" />
+<h2>Allocating Processors &amp; Memory to a VM using Hyper-V</h2>
+<p>In this section, we will see the task of allocating CPU, Memory and Disk Resources to the virtual machines that are running on a server. The key to allocating CPU or any other type of resource in Hyper-V is to remember that everything is relative.</p>
+<p>For example, Microsoft has released some guidelines for Virtualizing Exchange Server. One of the things that was listed was that the overall system requirements for Exchange Server are identical whether Exchange is being run on a virtual machine or on a dedicated server.</p>
+<p>To allocate one of the features mentioned above, we need to click on the “Settings…” tab in the right hand side panel.</p>
+<img src="images/settings.jpg" alt="Settings" />
+<p>To allocate more memory to the selected virtual machine, click on the “Memory” tab on the left hand side of the screen. You will also have “Startup RAM”, where you can allocate as much ram as you have physically to a VM machine &rarr; Click on “Ok”.</p>
+<img src="images/memory_tab.jpg" alt="Memory Tab" />
+<p>To allocate more processors, click on the “Processor” tab on the left hand side of the panel. Then you can enter the number of virtual processors for your machine.</p>
+<img src="images/processor.jpg" alt="Processor" />
+<p>If you need to expand, compress the capacity of the virtual hard disk. Click on the “IDE controller 0” on the left hand side panel &rarr; click on “Edit”.</p>
+<img src="images/ide.jpg" alt="IDE" />
+<p>Once all the above changes are done, Click on “Next”.</p>
+<img src="images/changes.jpg" alt="Changes" />
+<p>Select one of the options based on your need (all of them have their respective descriptions) and then click on “Next”.</p>
+<img src="images/choose_action.jpg" alt="Choose Action" />
+<p>Click on “Finish” and wait for the process to finish.</p>
+<img src="images/finish_click.jpg" alt="Finish Click" />
+<h2>Using Checkpoints in Hyper-V</h2>
+<p>Checkpoints in Hyper-V are called snapshots and they help us to revert the machine in a desired state that we had in the past.</p>
+<p>To create a checkpoint we should follow the steps given below.</p>
+<p><b>Step 1</b> &minus; Select the VM by clicking on it. On the left hand side panel, click on “Checkpoint”.</p>
+<img src="images/checkpoint.jpg" alt="Checkpoint" />
+<p><b>Step 2</b> &minus; The following checkpoint will be created with the respective date and time in the main Hyper-V manager console.</p>
+<img src="images/console.jpg" alt="Console" />
+<div class="mui-container-fluid button-borders show" id="bottom_navigation">
+<div class="pre-btn">
+<a href="virtualization2.0_hardware.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="virtualization2.0_vmware_workstation_player.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="google-bottom-ads">
+<div>Advertisements</div>
+<div>
+<div id="vi_bottom_ads"></div>
+   <script>
+     (function() {
+     var adPos = document.getElementById('vi_bottom_ads');
+     var mobile_ad_id = "vi_9012177";
+     var desktop_ad_id = "vi_9013190";
+     var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+     adPos.innerHTML = '<div class="adsbyvli" data-ad-slot="' + ad_id + '"></div>';
+     (vitag.displayInit = window.vitag.displayInit || []).push(function () {
+         viAPItag.display(ad_id);
+     });
+     }())
+   </script>
+</div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2" id="right-col">
+<div class="space-top"></div>
+<div class="google-right-ad" id="ad300" style="margin: 0px auto !important;margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9012177"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9012177")})</script>
+</div>
+<div class="google-right-ad" style="margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9017966"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9017966")})</script>
+</div>
+<div class="google-right-ad google-right-ads" id="stickyparent" style="margin-top:5px;">
+<div id="sticky-ad">
+<div style="position:relative;margin:auto;margin-bottom:15px;">
+<div class="adsbyvli" data-ad-slot="vi_9013289"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9013289")})</script>
+</div>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="../index.html" class="logo"><img class="img-responsive" src="https://www.tutorialspoint.com/images/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_helping.htm"><i class="fal fa-hands-helping"></i> Helping</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">&copy; Copyright 2019. All Rights Reserved.</div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Preparing the Infrastructure - Tutorialspoint</title>
+<meta charset="utf-8">
+<meta name="description" content="Preparing the Infrastructure - Virtualization, at least at the server level, has been in use for some time. Since, the concept has expanded to the User, Application, Network, Security, Storag"/>
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code"/>
+<link rel="canonical" href="virtualization2.0_preparing_the_infrastructure.htm" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="../themes/css/style-min-v1.css">
+<script src="../themes/js/script-min-v1.js%3Fv=1.0.1"></script>
+<script>function printPage() { window.print(); }</script>
+<script type="text/javascript" src="https://services.bilsyndication.com/adv1/?q=0a8a90220201327770f6c986bea026a3" defer="" async=""></script>
+<script>var vitag = vitag || {};</script>
+<script>vitag.outStreamConfig = { enablePC: false, enableMobile: false };</script>  
+<script>function printPage() { window.print(); }</script>
+<style>
+.right-menu .mui-btn {
+    background-color:#036db0;
+}
+a.demo {
+    background:#036db0;
+}
+li.heading {
+    background:#036db0;
+}
+.course-box{background:#036db0}
+.home-intro-sub p{color:#036db0}
+</style>
+</head>
+<body>
+<header id="header">
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="../index.html" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="../online_dev_tools.htm.tmp.html" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="../codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="../current_affairs.htm.tmp.html" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item online-tutoris">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="../whiteboard.htm.tmp.html" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fal fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> 
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>        
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="../index.html" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="images/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="../academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="../big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="../computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="../computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="../database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="../devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="../digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="../engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="../famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="../gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="../latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="../machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="../mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="../management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="../maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="../microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="../misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="../mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="../java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="../python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="../sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="../scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="../selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="../software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="../soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="../telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="../web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="../sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="../xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="../multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="../questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="../search.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box">
+<form method="get" class="search-form" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+<button><i class="fal fa-search"></i></button>
+</form>
+</div>
+<div class="menu-btn library-btn">
+<a href="../tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="mui-dropdown">
+<button class="mui-btn mui-btn--primary mobile-menu" data-mui-toggle="dropdown">
+<span class="mui-caret"></span>
+</button>
+<ul class="mui-dropdown__menu">
+<li><a href="../tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a></li>
+<li><a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a></li>
+<li><a href="https://store.tutorialspoint.com"><i class="fal fa-book"></i> <span>eBooks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<div class="mini-logo">
+<img src="images/virtualization-mini-logo.jpg" alt="Virtualization 2.0 Tutorial" />
+</div>
+<ul class="toc chapters">
+<li class="heading">Virtualization 2.0 Tutorial</li>
+<li><a href="index.htm">Virtualization 2.0 - Home</a></li>
+<li><a href="virtualization2.0_overview.htm">Virtualization 2.0 - Overview</a></li>
+<li><a href="virtualization2.0_pros_and_cons.htm">Virtualization 2.0 - Pros and Cons</a></li>
+<li><a href="virtualization2.0_common_uses.htm">Virtualization 2.0 - Common Uses</a></li>
+<li><a href="virtualization2.0_hardware.htm">Virtualization 2.0 - Hardware</a></li>
+<li><a href="virtualization2.0_microsoft_hyperv.htm">Virtualization 2.0 - Microsoft HyperV</a></li>
+<li><a href="virtualization2.0_vmware_workstation_player.htm">VMware Workstation Player</a></li>
+<li><a href="virtualization2.0_virtualbox.htm">Virtualization 2.0 - VirtualBox</a></li>
+<li><a href="virtualization2.0_openstack.htm">Virtualization 2.0 - Openstack</a></li>
+<li><a href="virtualization2.0_preparing_the_infrastructure.htm">Preparing the Infrastructure</a></li>
+<li><a href="virtualization2.0_troubleshooting.htm">Virtualization 2.0 - Troubleshooting</a></li>
+<li><a href="virtualization2.0_backing_up_restoring_migrating_vm.htm">Backing Up, Restoring &amp; Migrating VM</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">Virtualization 2.0 Useful Resources</li>
+<li><a href="virtualization2.0_quick_guide.htm">Virtualization 2.0 - Quick Guide</a></li>
+<li><a href="virtualization2.0_useful_resources.htm">Virtualization 2.0 - Useful Resources</a></li>
+<li><a href="virtualization2.0_discussion.htm">Virtualization 2.0 - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="../developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="../questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="../effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="../hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="../computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="../computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div style="height:250px;">
+<div class="adsbyvli" data-ad-slot="vi_9017967"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9017967")})</script>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>Preparing the Infrastructure</h1>
+<hr />
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center" class="google-top-ads">
+<div id="vi_top_ads" style="text-align:center !important;"></div>
+   <script>
+     (function() {
+     var adPos = document.getElementById('vi_top_ads');
+     var ad_id_720 = "vi_9012178";
+     var ad_id_650 = "vi_9014435";
+     var ad_id_300 = "vi_9017967";
+     var width = window.innerWidth;
+     var ad_id = ad_id_720;
+     if( width <= 768 ){
+        ad_id =  ad_id_300;
+     }else if( width <= 1435 ){
+        ad_id =  ad_id_650;
+     }
+     adPos.innerHTML = '<div class="adsbyvli" data-ad-slot="' + ad_id + '"></div>';
+     (vitag.displayInit = window.vitag.displayInit || []).push(function () {
+         viAPItag.display(ad_id);
+     });
+     }())
+   </script>
+</div>
+<br>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="virtualization2.0_openstack.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="virtualization2.0_troubleshooting.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>Virtualization, at least at the server level, has been in use for some time. Since, the concept has expanded to the User, Application, Network, Security, Storage, and of course to Desktop Virtualization (VDI) as well. Therefore, to roll out in all these concepts, we have to prepare an infrastructure before, which is divided in some key components.</p>
+<p>The First one is <b>Hypervisor</b> and we have discussed it in the earlier chapters. Some important specifications needed for this job are – Processors, Memory and Networking Modes, etc.</p>
+<h3>Networking - LAN and WAN Optimization</h3>
+<p>VDI can be very resource intensive – this includes traffic over the wire. Having a good <b>core-switching infrastructure</b> will help alleviate this pain by allowing the administrators to create certain rules and policies revolving around traffic flow.</p>
+<p>Setting up <b>QoS metrics</b> for VDI-specific traffic can help remove congestion and ensure that the right traffic has the proper amount of priority. As for the traffic that is leaving the data center, knowing where the user is located and optimizing their experience based on certain criteria, becomes very important.</p>
+<p>Another significant aspect is storage. Large organizations will have numerous storage controllers. At the same time, some smaller organizations will be using only one. Regardless of the amount of storage controllers available, they need to be sized properly for VDI.</p>
+<p>To prevent boot and processing storms, organizations must look at IOPS requirements for their images. To alleviate processing pains, administrators can look at <b>Flash Technologies</b> (<b>NetApp, Fusion-IO, XtremIO</b>) or <b>SSD Technologies</b> (<b>Violin, Nimbus</b>) to help offload that kind of workload. Furthermore, intermediary platforms like Atlantis ILIO run on top of a virtual machine that utilizes massive amounts of RAM as the key storage repository.</p>
+<h2>Understanding Different File Systems</h2>
+<p>File systems are varied depending on their functions. Some of the most common ones are listed below &minus;</p>
+<ul class="list">
+<li>Virtual Machine File System- VMFS</li>
+<li>Network File System- NFS</li>
+<li>New Technology File System- NTFS</li>
+<li>Raw Device Mapping- RDM</li>
+</ul>
+<p>Let us discuss each of these in detail.</p>
+<h3>Virtual Machine File System</h3>
+<p><b>VMFS</b> is a file system proprietary to VMware. It is a clustered file system and it can be mounted on multiple servers simultaneously. This helps every host to connect to the any file system at the same time, which is expected from a proprietary system preferred by VMware. Most of the VMware hypervisors will work with other file systems, but the default choice and the preferred choice is VMFS.</p>
+<h3>Network File System</h3>
+<p>NFS is a system that was originally developed by Sun, but is now an Open Standard system. Used commonly in the UNIX and Linux world. It is a distributed file system. It can be mounted on one server and the network will be used to share information to multiple machines.</p>
+<h3>New Technology File System</h3>
+<p>NTFS is the standard file structure for the Windows NT operating system. It is used for retrieving and storing files on the hard disk.</p>
+<h3>Raw Device Mapping</h3>
+<p>RDM helps any file in a virtual machine file system to act as a proxy for any raw device. It allows a VM to access as well as use the storage device.</p>
+<h2>Choosing Between Different Types of Storage</h2>
+<p>All the storage devices are divided into three categories, which are &minus;</p>
+<ul class="list">
+<li>Direct-Attached Storage</li>
+<li>Network-Attached Storage</li>
+<li>Storage-Area Network</li>
+</ul>
+<p>Let us understand each of these in detail.</p>
+<h3>Direct-Attached Storage</h3>
+<p>DAS is your local hard drive. We can have one or more local hard drives in every machine. It is mostly used for small-virtualized systems. This solution is appropriate for a small amount of guest machines. It is the cheapest and the easiest method of storage. You can connect an external hard drive too with this method, load any guest machines onto that external hard drive, and that is just a quick and easy way to get rolling.</p>
+<p>For example – A server that has local hard discs on it. That type of hypervisor can hold not more that 10-20 VM machines. A sample device can be a HP Server with eight local hard discs as shown in the following illustration.</p>
+<img src="images/direct_attached.jpg" alt="Direct Attached" />
+<h3>Network-attached Storage</h3>
+<p>NAS is "Any server that shares its own storage with others on the network and acts as a file server in the simplest form". Network Attached Storage shares files over the network. Some of the most significant protocols used are <b>SMB, NFS, CIFS,</b> and <b>TCP/IP</b>. When you access files on a file server on your windows system, it is NAS</p>
+<p>NAS will be using an Ethernet connection for sharing files over the network. The NAS device will have an IP address and then will be accessible over the network through that IP address. Biggest providers of NAS are <b>QNAP</b> and <b>Lenovo</b>.</p>
+<img src="images/network_attached.jpg" alt="Network Attached" />
+<p>The following illustration shows how NAS works.</p>
+<img src="images/nas.jpg" alt="NAS" />
+<h3>Storage-area Network</h3>
+<p>SANs allow multiple servers to share a pool of storage; making it appear to the server as if it were local or directly attached storage. A dedicated networking standard, <b>Fibre Channel</b>, has been developed to allow blocks to be moved between servers and storage at high speed. It uses dedicated switches and a fiber-based cabling system, which separates it from the day-to-day traffic traversing the busy enterprise network. While the well-established SCSI protocol enables communication between the servers’ host bus adaptors and the disk system.</p>
+<img src="images/fibre_channel.jpg" alt="Fibre Channel" />
+<p>The following illustration shows how a SAN switch operates.</p>
+<img src="images/san.jpg" alt="SAN" />
+<div class="mui-container-fluid button-borders show" id="bottom_navigation">
+<div class="pre-btn">
+<a href="virtualization2.0_openstack.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="virtualization2.0_troubleshooting.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="google-bottom-ads">
+<div>Advertisements</div>
+<div>
+<div id="vi_bottom_ads"></div>
+   <script>
+     (function() {
+     var adPos = document.getElementById('vi_bottom_ads');
+     var mobile_ad_id = "vi_9012177";
+     var desktop_ad_id = "vi_9013190";
+     var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+     adPos.innerHTML = '<div class="adsbyvli" data-ad-slot="' + ad_id + '"></div>';
+     (vitag.displayInit = window.vitag.displayInit || []).push(function () {
+         viAPItag.display(ad_id);
+     });
+     }())
+   </script>
+</div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2" id="right-col">
+<div class="space-top"></div>
+<div class="google-right-ad" id="ad300" style="margin: 0px auto !important;margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9012177"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9012177")})</script>
+</div>
+<div class="google-right-ad" style="margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9017966"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9017966")})</script>
+</div>
+<div class="google-right-ad google-right-ads" id="stickyparent" style="margin-top:5px;">
+<div id="sticky-ad">
+<div style="position:relative;margin:auto;margin-bottom:15px;">
+<div class="adsbyvli" data-ad-slot="vi_9013289"></div><script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9013289")})</script>
+</div>
+</div>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="../index.html" class="logo"><img class="img-responsive" src="https://www.tutorialspoint.com/images/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_helping.htm"><i class="fal fa-hands-helping"></i> Helping</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">&copy; Copyright 2019. All Rights Reserved.</div>
+</div>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-232293-17"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+</footer>
+</body>
+</html>
