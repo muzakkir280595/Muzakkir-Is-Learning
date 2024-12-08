@@ -1,0 +1,1 @@
+docker import <filename>.tar <new_image_name>

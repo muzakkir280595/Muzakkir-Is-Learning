@@ -1,0 +1,1 @@
+docker save -o <filename>.tar <image_name>

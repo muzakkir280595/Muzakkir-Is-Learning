@@ -1,0 +1,7 @@
+docker commit 61f338cc3af3
+docker tag 4fd988e41da6 imagecreatefromcontainer:ssh
+
+
+
+
+Note:The tag id number is different because, it is the image id created by using container id of 61f338cc3af3 
