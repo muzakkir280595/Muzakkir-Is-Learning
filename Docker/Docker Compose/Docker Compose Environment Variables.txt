@@ -1,0 +1,26 @@
+Docker Compose Environment Variables
+Environment variables can be used in Docker Compose to pass configuration settings into services. These can be defined within a service's configuration as part of the `environment` section or loaded from an external file.
+
+Basic Ways to Set Environment Variables
+Inline − Register environment variables within your service definition.
+env_file − This command allows environment variables to be loaded from an external file.
+
+Example:
+services:
+   web:
+      image: myapp:latest
+      environment:
+         - NODE_ENV=production
+         - API_KEY=12345
+
+   database:
+      image: postgres:latest
+      env_file:
+         - .env
+
+
+
+in .env file:
+POSTGRES_USER=myuser
+POSTGRES_PASSWORD=mypassword
+POSTGRES_DB=mydatabase

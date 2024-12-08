@@ -1,0 +1,26 @@
+Docker Compose Volumes
+Docker Compose uses volumes to persist data created or consumed by Docker containers. The volumes section in the docker-compose.yml file defines all the volumes attached to services for storing data in a way that its lifecycle exists outside of the container.
+
+Key Volume Configuration Options
+External − Indicates whether the volume is created outside Docker Compose.
+Driver − Specifies the volume driver to use.
+Driver_opts − Options to configure the volume driver.
+
+
+Example:
+
+volumes:
+   db-data:
+   app-data:
+      external: true
+
+services:
+   database:
+      image: postgres:latest
+      volumes:
+         - db-data:/var/lib/postgresql/data
+
+   app:
+      image: myapp:latest
+      volumes:
+         - app-data:/usr/src/app

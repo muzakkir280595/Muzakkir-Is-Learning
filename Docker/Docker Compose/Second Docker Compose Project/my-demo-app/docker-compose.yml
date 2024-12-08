@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  apache:
+    image: php:apache
+    container_name: apache-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mysql
+    links:
+      - mysql
+
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-app
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql_root_password
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: myuser_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql

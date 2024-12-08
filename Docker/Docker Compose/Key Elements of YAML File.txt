@@ -1,0 +1,5 @@
+Key Elements of YAML File
+Version − This defines the format of the Docker Compose file so that it ensures compatibility with different Docker Compose features.
+Services − Contains lists of all services (containers) composing the application. Each service is described with uncounted configuration options.
+Networks − It will specify custom networks for inter-container communication and may specify the configuration options and network drivers.
+Volumes − Declares shared volumes that are used to allow persistent storage. Volumes can be shared between services or used to store data outside the container's lifecycle.

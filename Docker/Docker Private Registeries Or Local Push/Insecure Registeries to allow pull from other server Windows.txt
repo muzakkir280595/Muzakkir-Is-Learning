@@ -1,0 +1,14 @@
+{
+  "builder": {
+    "gc": {
+      "defaultKeepStorage": "20GB",
+      "enabled": true
+    }
+  },
+  "registry-mirrors": [],
+  "insecure-registries": ["192.168.56.143:5000"],
+  "debug": true,
+  "experimental": false
+}
+
+After that, need to restart docker service.

@@ -1,0 +1,44 @@
+docker-compose up
+
+Explanation:
+The docker-compose up command brings up and runs the entire application, as defined in the docker-compose.yml file while creating and starting all the services, networks, and volumes. In addition, if images of this service have never been built, it builds the necessary Docker images.
+
+docker-compose down
+
+Explanation:
+The command `docker-compose down` stops and removes all the containers, networks, and volumes defined in the `docker-compose.yml` file. So, this command helps in cleaning up the resources that your app has taken so far, in the sense that you're sure no residual container or network continues running somewhere.
+
+docker-compose build
+
+Explanation:
+This command is used to build or rebuild Docker images for services defined in the docker-compose.yml file. It runs when changes are made in a Dockerfile or source code; new images need to be created.
+
+
+
+
+
+Docker Compose Start, Stop, Restart Commands
+`docker-compose start` will start the already created containers without recreating them, bringing up previously stopped services.
+`docker-compose stop` stops the currently running containers, without discarding them; thus, it is possible to restart the services later.
+`docker-compose restart` is useful if you've brought changes to the environment or configuration and want to restart them.
+
+
+docker-compose ps
+
+Explanation:
+The docker-compose ps command shows the status of all services defined in the docker-compose.yml file, pointing out containers' statuses, their names, states, and ports. This command is used to inspect the current state of the services.
+
+
+
+docker-compose logs
+
+Explanantion:
+The command `docker-compose logs` gets and displays the bundle of all logs that define services in `docker-compose.yml`. It is essential for debugging and monitoring the application because this will primarily involve real-time output from executing containers.
+
+
+
+$ docker-compose exec <service_name> <command>
+$ docker-compose exec web bash
+
+Explanation:
+The docker-compose exec command runs arbitrary commands in a running service container. This can be handy for running system commands inside your application or executing scripts directly within the container.

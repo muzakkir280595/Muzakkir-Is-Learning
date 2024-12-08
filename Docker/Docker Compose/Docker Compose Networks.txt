@@ -1,0 +1,28 @@
+Docker Compose Networks
+Docker Compose networks allow for communication between services. By default, Docker Compose defines a single network for all services described under docker-compose.yml. However, you can define your custom networks to better control inter-service communication.
+
+Best Network Configuration Options
+driver − This specifies the driver to be used in the network (e.g., bridge, overlay).
+driver_opts − Options for the network driver.
+ipam − Specifies the IP address management configurations like subnets and IP ranges.
+
+Example:
+networks:
+   frontend:
+      driver: bridge
+   backend:
+      driver: bridge
+
+services:
+   web:
+      networks:
+         - frontend
+
+   api:
+      networks:
+         - frontend
+         - backend
+
+   db:
+      networks:
+         - backend

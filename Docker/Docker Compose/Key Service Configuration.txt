@@ -1,0 +1,33 @@
+Docker Compose Services
+Services in Docker Compose represent the containers comprising the user's application. Each service is defined in the `services` section of the `docker-compose.yml` file and has its configuration such as a Docker image to use, variables within the environment, ports, volumes, and network settings.
+
+Key Service Configuration Options
+Image − This field specifies the Docker image that should be used for the service.
+Build − Specifies the directory for a build context, thus allowing the specification to make an image or not pull from a registry.
+Ports − maps host ports to the container.
+Volumes − Attach volumes to your service for persistent storage.
+Environment − Services environment variables.
+Depends_on − Defines service dependencies so they are started in the appropriate order.
+
+
+
+
+
+Example:
+services:
+   app:
+      image: myapp:latest
+      build: .
+      ports:
+         - "8080:80"
+      volumes:
+         - app-data:/usr/src/app
+      environment:
+         - NODE_ENV=production
+      depends_on:
+         - db
+
+   db:
+      image: postgres:latest
+      environment:
+         POSTGRES_PASSWORD: example
