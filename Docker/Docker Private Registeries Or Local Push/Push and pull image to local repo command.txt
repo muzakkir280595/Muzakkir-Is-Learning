@@ -1,0 +1,32 @@
+sudo docker tag 67591570dd29 localhost:5000/centos
+
+
+
+
+The following points need to be noted about the above command:
+- 67591570dd29 refers to the Image ID for the centos image.
+- localhost:5000 is the location of our private repository.
+- We are tagging the repository name as centos in our private repository
+
+
+
+
+sudo docker push localhost:5000/centos
+
+
+
+-Here, we are pushing the centos image to the private repository hosted at
+localhost:5000.
+
+
+
+
+sudo docker pull localhost:5000/centos
+
+
+-Here, we are pulling the centos image to the private repository hosted at
+localhost:5000.
+
+
+
+

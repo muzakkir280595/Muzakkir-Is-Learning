@@ -1,0 +1,16 @@
+sudo docker run -d -p 5000:5000 --name registry registry:2
+
+
+
+
+
+
+The following points need to be noted about the above command:
+- Registry is the container managed by Docker which can be used to host private
+repositories.
+- The port number exposed by the container is 5000. Hence with the –p command,
+we are mapping the same port number to the 5000 port number on our localhost.
+- We are just tagging the registry container as “2”, to differentiate it on the Docker
+host.
+- The –d option is used to run the container in detached mode. This is so that the
+container can run in the background.
