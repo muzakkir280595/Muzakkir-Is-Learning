@@ -1,36 +1,43 @@
 import java.util.Scanner;
 
-public class switchs {
+public class switchAlphabet {
 	
+
 	//Switch have little bit same function with if else statement, just it is more easy to read and better for performance.
 	//break is needed for switch function to avoid it to go to the next switch or test cases.
 	//Case expression must be constant expression. Constant expression is something that we not declare like int y=1 then we change case from case 1 to case y.It MUST case 1.
-
+	
 	public static void main(String[] args) {
-		int year;
+		
 		Scanner keyboard = new Scanner (System.in);
 		System.out.println("Enter your experince working year:");
-		year = keyboard.nextInt();
+		String year = keyboard.next();
 		
 		switch (year) {
-		case 1:
+		
+		case "A":
 			System.out.println("Freshman");
 			break;
-		case 2:
+			
+		case "B":
 			System.out.println("Sophomore");
 			break;
-		case 3:
+			
+		case "C":
 			System.out.println("Junior");
 			break;
-		case 4:
+			
+		case "D":
 			System.out.println("Senior");
-			break;  
-		case 5:
-			System.out.println("Super Senior"); //The end of this case break does not need to put also can but I'm usually put just to be safe.
+			break;
+			
+		case "E":
+			System.out.println("Super Senior");
+			break;
+			
+		default:
+			System.out.println("Are you CRAZY!!!!You Are More Than SUPER SENIOR!!!!");
 		}
-		
-		System.out.println("Are you CRAZY!!!!You Are More Than SUPER SENIOR!!!!");
-
 	}
 
 }
