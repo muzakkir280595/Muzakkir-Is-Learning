@@ -1,0 +1,4 @@
+When we want to run something from java, it will search for main. This is useful if we make other classes and want to run it from other class, the other class that want to run from other class, need to have the main.
+
+As an example for main:
+ public static void main(String[] args) {}

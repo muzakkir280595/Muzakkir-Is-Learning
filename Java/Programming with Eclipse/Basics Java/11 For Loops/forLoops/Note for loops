@@ -1,0 +1,8 @@
+3 statements needed for for loops
+
+Where you want to start. Need ; at the end of it
+Where you want to end it. Need ; at the end of it
+How much you want to increment by. Does not need ; at the end of it
+
+++ is increase by 1.
++=3 is increase by 3.
